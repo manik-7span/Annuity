@@ -49,11 +49,8 @@
     padding: 10px 20px;
     position: relative;
   }
-  .hero::after{
-    content: url('../images/hero-banner.png') ;
-    position: absolute;
-    right: 17%;
-    top: 14%;
+  .hero__details{
+    display: flex;
   }
   .hero__navbar {
     display: flex;
@@ -78,18 +75,28 @@
     font-family: 'Roboto';
     font-size: 16px;
     line-height: 26px;
-    color: black;
+    color:#000000;
     font-weight: 700;
   }
   
   .hero__menu-item a:hover {
     text-decoration: underline;
   }
+  /* mobile menu */
+  .mobile__menu{
+    background-color:#fff;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  .header__show{
+    display: flex;
+  }
   .burger-icon {
     display: none;
     font-size: 24px;
     cursor: pointer;
-    color: white;
+    color:#000;
   }
   /* Search bar styles */
   .hero__search {
@@ -114,6 +121,13 @@
   .hero__info{
     padding-top: 187px;
     padding-bottom: 182px;
+    max-width: 70%;
+  }
+  .hero__image{
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+
   }
   .hero__heading{
     color: #333333;
@@ -134,6 +148,8 @@
 /* Filled Button Style */
 .buttons{
   padding-top: 82px;
+  display: flex;
+  gap: 15px;
 }
 .primary__button{
   background-color: #00bcd4;
@@ -172,6 +188,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 16px;
+  text-align: center;
 }
 
 .button--outlined::after {
@@ -437,20 +454,25 @@
   font-size: 16px;
   margin-bottom: 20px;
 }
-.cta--Button{
+.cta-button{
+  background-color: #00bcd4;
+  color: white;
+  padding: 19px 32px;
+  border: none;
+  font-family: 'Josefin Sans';
+  font-weight: 600;
   font-size: 16px;
+  line-height: 16px;
 }
-.cta--button ::after{
-  content: "";
-  background-image: url(../images/solar-download.svg); 
-  font-size: 16px;
-  margin-left: 10px;
+.cta-button::after{
+  content:url(../images/lightdollar.svg);
+  padding-left: 10px;
 }
 
 .stats {
   display: flex;
   justify-content: space-between;
-  padding-top: 120px;
+  margin-top: 40px;
 }
 
 .stat__item {
@@ -593,16 +615,88 @@ padding-bottom: 60px;
   background-repeat: no-repeat;
   background-size: cover;
 }
+.Income__section{
+  background: linear-gradient(90deg, rgba(242, 60, 54, 0) 0%, #FFFFFF 70.03%);
+}
 .Income__wrapper{
   padding-top: 120px;
   padding-bottom: 120px;
+  display: flex;
+}
+.Income__left{
+  width: 50%;
 }
 .Income__list{
-  display: flex;
+  flex: 1 1 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 51px;
+  padding-bottom: 60.5px;
+}
+.Income__info-head{
+  max-width: 447px;
+  padding-bottom: 40px;
+}
+.Income__info-text{
+  font-family: 'Roboto'; 
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  max-width: 472px;
+  padding-bottom: 38px;
+  color: #4F4F4F;
 }
 .Income__list--content{
   display: flex;
   align-items: center;
+  gap: 5px;
+}
+.content-text{
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+}
+.Income__btn{
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #FFFFFF;
+  background: #F1615B;
+  padding: 19px 33px 15px 32px;
+  border-radius: 2px;
+}
+.Income__btn::after{
+  content: url(../images/pinkdollar.svg);
+  padding-left: 18px;
+}
+/*--health-section--*/
+.health{
+  background-image: url(../images/Healthbg-image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.health__section{
+  background: linear-gradient(90deg, rgba(151, 214, 237, 0.7) 0%, #FFFFFF 106.92%);
+}
+.Health__info{
+  max-width: 472px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  margin-left: auto;
+}
+.health__btn{
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #FFFFFF;
+  background: #00B4D6;
+  padding: 20px 16px 14px 32px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+.health__btn::after{
+  content: url(../images/Bluearrow.svg);
+  padding-left: 13px;
 }
 /* Footer Container */
 .footer {
@@ -615,7 +709,6 @@ padding-bottom: 60px;
 .footer__details {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 72px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 36px;
@@ -718,5 +811,303 @@ padding-bottom: 60px;
   color: #999;
   line-height: 1.6;
 }
+@media screen and (max-width: 1024px){
+  .hero__menu-item a{
+    font-size: 14px;
+    line-height: 19px;
+  }
+  .hero__menu{
+    gap: 15px
+  }
+  .hero__image{
+    right: -16px;
+  }
+  .hero__heading{
+    font-size: 78.6px;
+    line-height: 84.6px;
+  }
+  .hero__description {
+    font-size: 23px;
+    line-height: 26px;
+}
+.button--filled{
+  font-size: 15px;
+  padding: 13px 12px;
+}
+.button--outlined{
+  font-size: 15px;
+  padding: 15px 12px;
+}
+.saving__right{
+  padding-top: 10px;
+}
+.saving__text{
+  padding-bottom: 28px;
+}
+.saving__heading {
+  padding-bottom: 28px;
+}
+.saving__description{
+  padding-bottom: 28px;
+}
+.stats{
+  margin-top: 28px;
+}
+.stat-card{
+  padding: 17px
+}
+.benefit__content-heading{
+  font-size: 35px;
+}
+.benefit__content-text{
+  font-size: 13px;
+}
+.benefit__item-text{
+  font-size: 17px;
+}
+.client__right{
+  padding-top: 45px;
+}
+.client__right-text ,.client__right-heading,.client__right-description{
+  padding-bottom: 28px;
+}
+.retire{
+  padding: 11px 21px 11px 16px;
+}
+.peace{
+  padding: 11px 36px 13px 25px;
+}
+.safe{
+  padding: 12px 39px 13px 43px;
+}
+.slide{
+  padding: 15px;
+}
+.slide__text{
+  font-size: 16px;
+}
+}
+@media only screen and (max-width: 768px) {
+.burger-icon{
+  display: block  ;
+}
+.hero_nav-info{
+  gap: 20px;
+}
+.mobile__menu{
+  display: none;
+  position: fixed;
+  top: 57px;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  padding: 20px;
 
-  
+}
+.hero__info{
+  max-width: none;
+}
+.hero__nav-list{
+  display: none;
+}
+.hero__details{
+  flex-direction: column;
+}
+.hero__heading{
+  font-size: 48px;
+  line-height: 52px;
+}
+.hero__image{
+  position: static;
+}
+.hero__menu{
+  flex-direction: column;
+}
+.hero::after{
+  position: static;
+}
+.brand__logos{
+  flex-wrap: wrap;
+}
+.hero__info {
+  padding-top: 94px;
+  padding-bottom: 35px;
+}
+.saving__wrapper{
+  flex-direction: column;
+}
+.saving__left{
+  width: 100%;
+  text-align: center;
+}
+.saving__right{
+  width: 100%;
+}
+  .benefit__content{
+    flex-direction: column;
+    gap: 80px;
+  }  
+  .benefit__content-left{
+    width: 100%;
+  }
+  .benefit__content-heading{
+    text-align: center;
+  }
+  .benefit__content-text{
+    text-align: center;
+  }
+  .benefit__content-right{
+    width: 100%;
+  }
+  .content{
+    flex-direction: column;
+  }
+  .client__left{
+    width: 100%;
+  }
+  .safe{
+    right: 204px;
+  }
+  .client__right{
+    width: 100%;
+  }
+  .Income__wrapper{
+    flex-direction: column;
+    gap: 80px;
+  }
+  .Income__left{
+    width: 100%;
+    text-align: center;
+  }
+  .Health__info{
+    margin:0 auto;
+  }
+  .footer__title{
+    padding-bottom: 15px;
+  }
+  .footer__details{
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 639px){
+  .stats{
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 425px){
+.buttons{
+  flex-direction: column;
+}
+.tag{
+  font-size: 14px;
+}
+.retire{
+  padding: 3px 15px 6px 10px;
+}
+.peace{
+  padding: 3px 43px 4px 20px;
+}
+.safe{
+  right: 56px;
+  padding: 2px 32px 6px 32px;
+}
+.callus__head{
+  font-size: 32px;
+  line-height: 35px;
+}
+.books{
+  flex-direction: column;
+}
+}
+@media only screen and (max-width: 350px){
+ .hero__navbar{
+  gap: 25px;
+ }
+ .hero__nav-info{
+  gap: 15px;
+ }
+ .hero__heading{
+  font-size: 25px;
+  line-height: 28px;
+ }
+ .hero__description{
+  font-size: 15px;
+  line-height: 19px;
+ }
+ .buttons{
+  padding-top:40px ;
+ }
+ .saving__heading{
+  font-size: 30px;
+  line-height: 35px;
+ }
+ .saving__description{
+  font-size: 14px;
+ }
+ .stat-description{
+  font-size: 14px;
+  line-height: 19px;
+ }
+ .benefit__item-text{
+  font-size: 14px;
+  line-height: 19px;
+ }
+ .retire{
+  top: 13px;
+  left: -20px;
+ }
+ .peace{
+  right: -13px;
+ }
+ .safe{
+  right: 32px;
+ }
+ .client__right-heading{
+  font-size: 25px;
+  line-height: 29px;
+ }
+ .client__right-description{
+  font-size: 14px;
+  line-height: 20px;
+ }
+ .slide__text{
+  font-size: 14px;
+  line-height: 20px;
+ }
+ .marq-head{
+  font-size: 37px;
+ }
+ .callus__head{
+  font-size: 25px;
+  line-height: 29px;
+ }
+ .Income__info-head{
+  font-size: 25px;
+  line-height: 29px;
+ }
+ .content-text{
+  font-size: 13px;
+  line-height: 16px;
+ }
+ .health__btn{
+  font-size: 14px;
+ }
+ .footer__details{
+  gap: 25px;
+ }
+ .footer__description{
+  font-size: 14px;
+  line-height: 19px;
+ }
+ .footer__list li a{
+  font-size: 14px;
+  line-height: 20px;
+ }
+ .footer__contact li{
+  font-size: 14px;
+  line-height: 20px;
+ }
+ .footer__copyright{
+  font-size: 10px;
+ }
+}
