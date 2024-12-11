@@ -1,19 +1,9 @@
-/*--search button--*/
-document.getElementById('search-button').addEventListener('click', function () {
-    const searchInput = document.getElementById('search-input').value;
-    if (searchInput) {
-      console.log('Searching for:', searchInput);
-      // You can replace this with actual search logic, like:
-      // window.location.href = `search-results.html?q=${searchInput}`;
-    } else {
-      alert('Please enter a search term.');
-    }
-  });
-  /*-burger icon-*/
-  function toggleMenu() {
-    const navInfo = document.querySelector('.hero__menu');
-    navInfo.classList.toggle('.hero__nav-list');
-  }
+
+function toggleMenu() {
+  const menu = document.querySelector('.mobile__menu');
+  menu.classList.toggle('hidden'); // Toggle the 'hidden' class
+}
+
   
   $(document).ready(function(){
     $('.slider').slick({

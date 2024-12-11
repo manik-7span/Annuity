@@ -3,10 +3,16 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
+  html {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
   body{
     margin: 0;
     letter-spacing: 0;
     font-family: 'Josefin Sans';
+    overflow-x: hidden;
   }
   ul{
     padding: 0px;
@@ -46,16 +52,17 @@
   /* Block styles */
 .hero {
     background-color:#00B4D60D;
-    padding: 10px 20px;
     position: relative;
   }
   .hero__details{
     display: flex;
+    position: relative;
   }
   .hero__navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 40px 0px;
   }
   .hero_nav-info{
     display: flex;
@@ -84,13 +91,10 @@
   }
   /* mobile menu */
   .mobile__menu{
-    background-color:#fff;
+    background-color:#00B4D6;
     display: none;
     flex-direction: column;
     width: 100%;
-  }
-  .header__show{
-    display: flex;
   }
   .burger-icon {
     display: none;
@@ -100,7 +104,7 @@
   }
   /* Search bar styles */
   .hero__search {
-    display: flex;
+    display: block;
     align-items: center;
   }
   
@@ -226,8 +230,14 @@
   display: flex;
   justify-content: center;
   gap: 40px;
+}
+.brand__logo-1 img{
   filter: grayscale(1);
 }
+.brand__logo-1 img:hover{
+  filter: none;
+}
+
 /*-saving section-*/
 .saving{
   background-color: #00B4D612;
@@ -237,6 +247,7 @@
   padding-bottom: 135px;
   display: flex;
   gap: 64px;
+  align-items: center;
 }
 .saving__left{
   width: 50%;
@@ -258,7 +269,6 @@
 }
 .saving__right{
   width: 50%;
-  padding-top: 54px;
 }
 .saving__text{
   padding-bottom: 40px;
@@ -279,8 +289,7 @@
   font-weight: 700;
   line-height: 26px;
 }
-/* General Section Styling */
-.stats {
+.saving__stats {
   display: flex;
   gap: 20px;
 }
@@ -291,8 +300,6 @@
   padding: 20px;
   text-align: center;
 }
-
-/* Text Styling */
 .stat-value {
   font-family: 'Roboto';
   font-size: 39px;
@@ -316,6 +323,7 @@
 }
 .benefit__section{
   background: linear-gradient(90deg, rgba(241, 97, 91, 0) 0%, #FFFFFF 70.03%);
+
 }
 .benefit__content{
   padding-top: 178px;
@@ -473,7 +481,8 @@
 .stats {
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 100px;
+  gap: 40px;
 }
 
 .stat__item {
@@ -509,6 +518,9 @@
 .slide-section{
   padding-top: 120px;
   padding-bottom: 120px;
+}
+.slick-slider{
+  margin-left: 305px;
 }
 .testimonial__head{
   text-align: center;
@@ -631,7 +643,7 @@ padding-bottom: 60px;
   flex: 1 1 50%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 51px;
+  gap: 31px;
   padding-bottom: 60.5px;
 }
 .Income__info-head{
@@ -852,7 +864,8 @@ padding-bottom: 60px;
   padding-bottom: 28px;
 }
 .stats{
-  margin-top: 28px;
+  margin-top: 60px;
+  gap: 25px;
 }
 .stat-card{
   padding: 17px
@@ -887,16 +900,22 @@ padding-bottom: 60px;
 .slide__text{
   font-size: 16px;
 }
+.slick-slider{
+  margin-left: 95px;
+}
 }
 @media only screen and (max-width: 768px) {
-.burger-icon{
-  display: block  ;
-}
+  .hero__menu.show {
+    display: flex; 
+  }
+  .burger-icon {
+    display: block; 
+  }
 .hero_nav-info{
   gap: 20px;
 }
 .mobile__menu{
-  display: none;
+  display: block;
   position: fixed;
   top: 57px;
   right: 0;
@@ -904,6 +923,9 @@ padding-bottom: 60px;
   z-index: 1;
   padding: 20px;
 
+}
+.mobile__menu.hidden{
+  display: none;
 }
 .hero__info{
   max-width: none;
@@ -972,6 +994,9 @@ padding-bottom: 60px;
   .client__right{
     width: 100%;
   }
+  .slick-slider{
+    margin-left: 40px;
+  }
   .Income__wrapper{
     flex-direction: column;
     gap: 80px;
@@ -1011,6 +1036,9 @@ padding-bottom: 60px;
 .safe{
   right: 56px;
   padding: 2px 32px 6px 32px;
+}
+.slick-slider{
+  margin-left: 25px;
 }
 .callus__head{
   font-size: 32px;
@@ -1070,6 +1098,9 @@ padding-bottom: 60px;
  .client__right-description{
   font-size: 14px;
   line-height: 20px;
+ }
+ .slick-slider{
+  margin-left: 7px;
  }
  .slide__text{
   font-size: 14px;
