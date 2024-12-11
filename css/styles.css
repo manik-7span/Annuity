@@ -226,6 +226,7 @@
   display: flex;
   justify-content: center;
   gap: 40px;
+  filter: grayscale(1);
 }
 /*-saving section-*/
 .saving{
